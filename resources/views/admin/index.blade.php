@@ -51,8 +51,8 @@
 
 .foo {
   float: left;
-  width: 350px;
-  height: 200px;
+  width: 25%;
+  height: 25%;
   margin: 10px;
   border: 1px solid rgba(0, 0, 0, .2);
   text-align: center;
@@ -62,8 +62,8 @@
 
 .too {
   float: left;
-  width: 350px;
-  height: 200px;
+  width: 25%;
+  height: 25%;
   margin: 10px;
   border: 1px solid rgba(0, 0, 0, .2);
   text-align: center;

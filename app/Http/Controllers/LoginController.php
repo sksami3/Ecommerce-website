@@ -28,35 +28,24 @@ class LoginController extends Controller
         $email = $request->email;
         $password = $request->input('password');
      
-        $admin = DB::table('admin')
+        $admin = DB::table('register')
                 ->where('email', $email)
                 ->where('password', $password)
+                ->where('type', 'admin')
                 ->first();
 
-        $employee = DB::table('employes')
+        $customer = DB::table('register')
                 ->where('email', $email)
                 ->where('password', $password)
-                ->first();
-
-        $customer = DB::table('customer')
-                ->where('email', $email)
-                ->where('password', $password)
+                ->where('type', 'customer')
                 ->first();
 
 
 
-        if($admin != null){
-
-            $request->session()->put('admin', $admin->username);
-            
-            return redirect()->route('admin.index');
-
-            
-        }
-        else if($employee != null)
+        if($admin != null)
         {
 
-                $request->session()->put('loggedAdmin', $employee);
+                $request->session()->put('loggedAdmin', $admin);
                 
                 return redirect()->route('admin.index');
 
@@ -65,9 +54,9 @@ class LoginController extends Controller
         else if($customer != null)
         {
 
-            $request->session()->put('id', $customer->id);
+            $request->session()->put('loggedCustomer', $customer);
                     
-            return redirect()->route('admin.index');
+            return redirect()->route('customer.index');
         }
 
         else

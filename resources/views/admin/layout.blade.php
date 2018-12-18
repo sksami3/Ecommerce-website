@@ -75,7 +75,7 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href=#>{{session('loggedAdmin')->firstname}}&ensp;{{session('loggedAdmin')->lastname}}</a>
+      <a href=#>{{session('loggedAdmin')->username}}&ensp;{{session('loggedAdmin')->email}}</a>
       <a href="{{route('logout.index')}}">Logout</a>
       
     </div>

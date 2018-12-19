@@ -34,7 +34,13 @@ class ManufacturerController extends Controller
      */
     public function create()
     {
-        $sub = Sub_Catagory::all();
+        //$sub = Sub_Catagory::all();
+
+        $sub = DB::table('sub_catagory')
+                        ->join('catagory', 'catagory.id', '=', 'sub_catagory.cat_id')
+                        ->get();
+
+
         return view('admin.addManufacturer')->with('s',$sub);
     }
 

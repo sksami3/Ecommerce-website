@@ -33,7 +33,7 @@
 					</td>
 			</tr>
 		</table>
-		<b>new user</b><a href="#"> create new account</a>
+		<b>new user?</b><a href="{{route('customer.create')}}""> Click here to register</a>
 
 	</form>
 		<p>{{session('message')}}</p>

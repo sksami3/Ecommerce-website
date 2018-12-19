@@ -2,9 +2,8 @@
 
 
 Route::get('/login','LoginController@index')->name('login.index');
-Route::get('/','LoginController@index')->name('login.index');
 Route::post('/login','LoginController@verify');
-Route::post('/','LoginController@verify');
+Route::get('/','CustomerController@index')->name('customer.index');
 Route::get('/logout','LogoutController@index')->name('logout.index');
 
 Route::group(['middleware'=>['sess']], function(){
@@ -77,3 +76,28 @@ Route::group(['middleware'=>['sess']], function(){
 	Route::get('admin/search','eSearchController@action')->name('adminSearch1.action');
 	
 });
+
+
+Route::group(['middleware'=>['csess']], function(){
+	Route::post('/customer/product_details/{id}', 'ChartController@store');
+	Route::get('/customer/chart', 'ChartController@show')->name('chart.list');
+	Route::get('/customer/chart/delete/{id}', 'ChartController@destroy')->name('cart.delete');
+
+	Route::get('/customer/chart', 'ChartController@show')->name('chart.list');
+	
+});
+
+
+
+
+Route::get('/customer', 'CustomerController@index')->name('customer.index');
+
+Route::get('/customer/product_details/{id}', 'CustomerController@buy')->name('customer.product_details');
+
+
+Route::get('/customer/register', 'CustomerController@create')->name('customer.create');
+Route::post('/customer/register', 'CustomerController@store');
+
+
+
+

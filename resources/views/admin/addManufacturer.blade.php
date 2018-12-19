@@ -44,7 +44,7 @@
 			<label>Sub Catagory Name:</label><br>
 			 <select id="dd" name="dd">
 			 @foreach($s as $s)
-			  <option value="{{$s->sub_cat_id}}">{{$s->sub_cat_name}}</option>
+			  <option value="{{$s->sub_cat_id}}">{{$s->sub_cat_name}}   (Catagory: {{$s->cat_name}})</option>
 			 @endforeach
 			</select> 
 			</div><br>

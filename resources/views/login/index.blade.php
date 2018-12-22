@@ -10,6 +10,8 @@
 </head>
 <body>
 	<div align="center">
+
+		<a href="{{route('customer.index')}}">Home</a>
 	<form method="post">
 		{{@csrf_field()}}
 		<h1>Welcome to Ecommerce Site</h1>

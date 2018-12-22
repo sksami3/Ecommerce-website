@@ -78,7 +78,19 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        //
+        $pro_det = DB::table('product_details')
+                        ->join('product', 'product.pro_id', '=', 'product_details.p_id')
+                        ->join('sub_catagory', 'sub_catagory.sub_cat_id', '=', 'product.sub_cat_id')
+                        ->join('catagory', 'catagory.id', '=', 'product.cat_id')
+                        ->join('manufacturer', 'manufacturer.man_id', '=', 'product.man_id')
+                        ->join('supplier', 'supplier.supp_id', '=', 'product_details.supp_id')
+                        ->where('catagory.id', '=', $id)
+                        ->get();
+
+            return view('customer.productswithcat')
+                    ->with('pd',$pro_det);
+
+
     }
 
     /**

@@ -99,5 +99,8 @@ Route::get('/customer/register', 'CustomerController@create')->name('customer.cr
 Route::post('/customer/register', 'CustomerController@store');
 
 
+Route::get('/customer/productlist/{id}', 'CustomerController@show')->name('products.view');
+
+
 
 

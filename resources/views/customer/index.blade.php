@@ -119,11 +119,11 @@
 
 	<section class="navbar main-menu">
 				<div class="navbar-inner main-menu" >				
-					<a href="index.html" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo" alt=""></a>
+					<a href="{{route('customer.index')}}" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo" alt=""></a>
 					<nav id="menu" class="pull-right">
 						<ul class="dd">
 							@foreach($c as $c)
-							<li class="ss"><a class="{{$c->id}}" id="s" href="./products.html">{{$c->cat_name}}</a></li>																
+							<li class="ss"><a class="{{$c->id}}" id="s" href="{{route('products.view', [$c->id])}}">{{$c->cat_name}}</a></li>																
 							@endforeach
 						</ul>
 					</nav>

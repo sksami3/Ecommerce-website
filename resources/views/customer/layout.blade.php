@@ -37,9 +37,12 @@
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">				
-							<li><a href="#">My Account</a></li>
-							<li><a href="cart.html">Your Cart</a></li>
-							<li><a href="checkout.html">Checkout</a></li>					
+							
+							@if(Session::has('loggedCustomer'))
+								<li><a href="#">My Account</a></li>
+							    <li><a href="{{route('chart.list')}}">Your Cart</a></li>
+							@endif
+											
 							<li><a href="{{route('login.index')}}">Login</a></li>
 							<li><a href="{{route('logout.index')}}">Logout</a></li>		
 						</ul>
@@ -109,20 +112,20 @@
 					<div class="span3">
 						<h4>Navigation</h4>
 						<ul class="nav">
-							<li><a href="./index.html">Homepage</a></li>  
-							<li><a href="./about.html">About Us</a></li>
-							<li><a href="./contact.html">Contac Us</a></li>
-							<li><a href="./cart.html">Your Cart</a></li>
-							<li><a href="./register.html">Login</a></li>							
+							<li><a href="{{route('customer.index')}}">Homepage</a></li>  
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Contac Us</a></li>
+							<li><a href="{{route('chart.list')}}">Your Cart</a></li>
+							<li><a href="{{route('customer.create')}}">Register</a></li>							
 						</ul>					
 					</div>
 					<div class="span4">
-						<h4>My Account</h4>
+						
 						<ul class="nav">
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Order History</a></li>
-							<li><a href="#">Wish List</a></li>
-							<li><a href="#">Newsletter</a></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
 						</ul>
 					</div>
 					<div class="span5">

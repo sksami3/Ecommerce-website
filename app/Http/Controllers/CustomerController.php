@@ -112,6 +112,7 @@ class CustomerController extends Controller
                         ->join('catagory', 'catagory.id', '=', 'product.cat_id')
                         ->join('manufacturer', 'manufacturer.man_id', '=', 'product.man_id')
                         ->join('supplier', 'supplier.supp_id', '=', 'product_details.supp_id')
+                        ->where('product_details.pro_det_id', '=', $id)
                         ->get();
         $sc = Sub_Catagory::all();
          $man=Manufacturer::all();

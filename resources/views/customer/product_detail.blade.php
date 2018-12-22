@@ -145,14 +145,14 @@
 							<ul class="nav nav-list">
 								<li class="nav-header">SUB CATEGORIES</li>
 								@foreach($sc as $sc)
-								<li><a href="products.html">{{$sc->sub_cat_name}}</a></li>
+								<li><a href="#">{{$sc->sub_cat_name}}</a></li>
 								@endforeach
 							</ul>
 							<br/>
 							<ul class="nav nav-list below">
 								<li class="nav-header">MANUFACTURES</li>
 								@foreach($man as $man)
-								<li><a href="products.html">{{$man->man_name}}</a></li>
+								<li><a href="#">{{$man->man_name}}</a></li>
 								@endforeach
 							</ul>
 						</div>

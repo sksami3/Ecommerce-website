@@ -55,7 +55,7 @@
 													<li class="span3">
 														<div class="product-box">
 															<span class="sale_tag"></span>
-															<p><a href="{{route('customer.product_details', [$pl->pro_det_id])}}"><img src="{{ asset($p->picture) }}" style="max-height: 100px; max-width: 150px;"  alt="picture not available" /></a></p>
+															<p><a href="{{route('customer.product_details', [$pl->pro_det_id])}}"><img src="{{ asset($pl->picture) }}" style="max-height: 100px; max-width: 150px;"  alt="picture not available" /></a></p>
 															<a href="{{route('customer.product_details', [$pl->pro_det_id])}}" class="title">{{$pl->product_name}}</a><br/>
 															<a href="{{route('customer.product_details', [$pl->pro_det_id])}}" class="category">{{$pl->writing}}</a>
 															<p class="price">{{$pl->price}}</p>
